@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1.WebisteHeader Add New Instrument
+  form(action='',method='POST')
+   .form-group
+    label(for='inputName') Instrument Name
+    input#inputName.form-control(type='text' aria-describedby='emailHelp', name="name" placeholder='Enter Name')
+    small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+   .form-group
+    label(for='Password') Rate
+    input#Password.form-control(type='text', name='price' placeholder='Price')
+   .form-group
+    label(for='Color') Color
+    input#Color.form-control(type='text', name='Color' placeholder='Color')
+   .form-check
+    input#Availability.form-check-input(type='checkbox', name='Availability')
+    label.form-check-label(for='Availability') Instrument Available
+   button.btn.btn-primary(type='submit') Submit

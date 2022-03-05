@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+     title= title
+     //link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+     //link(rel='stylesheet', href='/stylesheets/style.css')
+     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+     <!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    
+  body
+
+    block content
+    script(src='/javascripts/jquery-3.6.0.min.js') 
+    script(src='/javascripts/bootstrap.min.js')
+     .navbar.navbar-default.navbar-fixed-top
+      .container
+       .navbar-header
+         a.navbar-brand(href='/') Music_Store
+          button.navbar-toggle(type='button', data-toggle='collapse', datatarget='#navbar-main')
+           span.icon-bar
+           span.icon-bar
+           span.icon-bar
+         #navbar-main.navbar-collapse.collapse
+          ul.nav.navbar-nav
+           li
+            a(href='/about/') About 

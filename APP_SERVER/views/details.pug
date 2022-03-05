@@ -1,0 +1,50 @@
+extends layout
+
+block content
+    h1.WebisteHeader #{Instrument.name}
+    p Product Rating - #{Instrument.rating}
+    p Availability - #{Instrument.Availability === true ? 'Yes' : 'No'}
+    p Available Quantity - #{Instrument.Quantity}
+    h3 Price Details
+        table.table.table-striped
+            thead
+              tr
+                th(scope='col') #
+                th(scope='col') Color
+                th(scope='col') Price
+            tbody
+                each price in Instrument.Price 
+                    tr
+                        th(scope='row') 
+                        td #{price.color}
+                        td #{price.rate}
+    h3 Review Details
+         table.table.table-striped
+            thead
+              tr
+                th(scope='col') #
+                th(scope='col') author
+                th(scope='col') rating
+                th(scope='col') postedDate
+                th(scope='col') review
+            tbody
+                each review in Instrument.reviews  
+                    tr
+                      th(scope='row') 
+                      td #{review.author}
+                      td #{review.star_rating}
+                      td #{review.timestamp}
+                      td #{review.reviewText}
+    h3 Shipping Details
+         table.table.table-striped
+            thead
+              tr
+                th(scope='col') #
+                th(scope='col') From Date
+                th(scope='col') To Date
+            tbody
+                each shipping in Instrument.Shipping  
+                    tr
+                      th(scope='row') 
+                      td #{shipping.FromDate}
+                      td #{shipping.ToDate}

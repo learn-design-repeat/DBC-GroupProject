@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1.WebisteHeader List of Instruments
+  a.btn.btn-primary.mb-2(type='button', href='/new') Add New Instrument
+  .container
+    each list in Instrument 
+      a(href=`/instrument/${list._id}`) 
+        .col-md-3.listcard 
+          .card-sl
+            .card-image
+              img(src='/static/guitar.jpg')
+              i.fa.fa-heart
+            .card-heading #{list.name}
+           
+          
+

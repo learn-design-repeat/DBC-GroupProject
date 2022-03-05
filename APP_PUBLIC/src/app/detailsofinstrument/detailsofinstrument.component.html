@@ -1,0 +1,47 @@
+<!-- <p>details-page works!</p>
+<app-header [content]="pageContent.header"></app-header>
+<p>{{newinstrument.name}}</p>
+<p>{{newinstrument.Color}}</p> -->
+
+
+ <!-- Single Post Start -->
+ <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../../assets/img/bg-img/breadcumb3.jpg);">
+    <div class="bradcumbContent">
+        <p>See Description</p>
+        <h2>Details</h2>
+    </div>
+  </section>
+ <div class="single-blog-post mb-100 wow fadeInUp" data-wow-delay="100ms">
+    <!-- Post Thumb -->
+    <div class="blog-post-thumb mt-30">
+        <a href="#">
+           
+            <img src="{{'../../assets/img/bg-img/' + newinstrument.img_tag}}" alt="">
+        </a>
+        
+    </div>
+
+    <!-- Blog Content -->
+    <div class="blog-content">
+        <!-- Post Title -->
+        <a href="#" class="post-title">"{{newinstrument.name}}"</a>
+        <!-- Post Meta -->
+        <div class="post-meta d-flex mb-30">
+            <p class="post-author">By<a href="#"> Admin</a></p>
+            <p class="tags">in<a href="#"> Events</a></p>
+            <p class="tags"><a href="#">2 Comments</a></p>
+        </div>
+        <!-- Post Excerpt -->
+        <p>Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis. Pellentesque sit amet velit a libero viverra porta non eu justo. Vivamus mollis metus sem, ac sodales dui lobortis,
+            CU Presents is the home of performing arts on the beautiful University of Colorado Boulder campus. With hundreds of concerts, plays, recitals and more on our stages each year, there’s something for everyone to enjoy,
+            CU Presents is the home of performing arts on the beautiful University of Colorado Boulder campus. With hundreds of concerts, plays, recitals and more on our stages each year, there’s something for everyone to enjoy,
+            CU Presents is the home of performing arts on the beautiful University of Colorado Boulder campus. With hundreds of concerts, plays, recitals and more on our stages each year, there’s something for everyone to enjoy.
+        </p>
+    </div>
+    <div class="col-12 text-center">
+        <button class="btn oneMusic-btn mt-30" (click)="Editalbum()">Edit<i class="fa fa-angle-double-right"></i></button>
+    </div>
+    <div class="col-12 text-center">
+        <button class="btn oneMusic-btn mt-30" (click)="deletealbum()">Delete<i class="fa fa-angle-double-right"></i></button>
+    </div>
+</div>

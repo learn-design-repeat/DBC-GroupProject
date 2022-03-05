@@ -1,0 +1,63 @@
+<!-- ##### Breadcumb Area Start ##### -->
+  <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(../../assets/img/bg-img/breadcumb.jpg);">
+    <div class="bradcumbContent">
+        <p>Update album</p>
+        <h2>Update Album</h2>
+    </div>
+</section>
+<!-- ##### Breadcumb Area End ##### -->
+
+
+<!-- ##### Contact Area Start ##### -->
+<section class="contact-area section-padding-0-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Contact Form Area -->
+                <div class="contact-form-area">
+                    <form (ngSubmit)="updatenewinstrument(newinstru)">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <input [(ngModel)]="newinstru.name" type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <input [(ngModel)]="newinstru.Quantity" type="text" class="form-control" id="Quantity" name="Quantity"  placeholder="Quantity">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <input [(ngModel)]="newinstru.Color" type="text" class="form-control" id="Color" name="Color"  placeholder="Color">
+                                </div>
+                            </div>
+                            
+                
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn oneMusic-btn mt-30" type="submit">Update<i class="fa fa-angle-double-right"></i></button>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Contact Area End ##### -->
+
+
