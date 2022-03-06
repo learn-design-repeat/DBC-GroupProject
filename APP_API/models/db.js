@@ -2,7 +2,7 @@ var mongoose = require('mongoose' );
 var gracefulShutdown;
 var dbURI = 'mongodb+srv://Ishwaya:Canada123@cluster0.zwppl.mongodb.net/MEAN_TASK?retryWrites=true&w=majority';
 
-mongoose.connect(dbURI,{dbName: 'Music'}); 
+mongoose.connect(dbURI,{dbName: 'Shoestore'}); 
 mongoose.connection.on('connected', function () {
  console.log('Mongoose connected to ' + dbURI);
 });
@@ -38,4 +38,4 @@ process.on('SIGTERM', function() {
 }); 
 
 
-require('./Instrument');
+require('./Shoe');

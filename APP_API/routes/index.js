@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const ctrlInstrument=require('../controllers/instrument');
+const ctrlShoes=require('../controllers/Shoe');
 
 // food
-router.get('/instrument', ctrlInstrument.getInstrument);
-router.post('/instrument', ctrlInstrument.createInstrumentOrder);
+router.get('/Shoe', ctrlShoes.getshoe);
+router.post('/Shoe', ctrlShoes.createshoe);
 
-router.get('/instrument/:instrumentid', ctrlInstrument.getsingleInstrumentOrder);
-router.put('/instrument/:instrumentid', ctrlInstrument.updateInstrumentorder);
-router.delete('/instrument/:instrumentid', ctrlInstrument.deleteInstrumentorder);
+router.get('/Shoe/:instrumentid', ctrlShoes.getsingleshoeOrder);
+router.put('/Shoe/:instrumentid', ctrlShoes.updateshoeorder);
+router.delete('/Shoe/:instrumentid', ctrlShoes.deleteshoeorder);
 module.exports = router;
