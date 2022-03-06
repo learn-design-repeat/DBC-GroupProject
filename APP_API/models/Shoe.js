@@ -6,10 +6,10 @@ const colorschema=new mongoose.Schema([{
 }])
 const ShoesSchema = new mongoose.Schema({
     Name: {type: String,required: true},
-    Brand:String,
-    modelNumber:String,
-    Price:String,
+    Brand: {type: String,required: true},
+    modelNumber: {type: String,required: true},
+    Price: {type: String,required: true},
     Color:[colorschema],
     Size:String
-     });
+    });
 mongoose.model('Shoe', ShoesSchema,'Shoes');

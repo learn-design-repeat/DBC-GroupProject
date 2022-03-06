@@ -61,7 +61,7 @@ const updateshoeorder=function(req,res)
             });
         return;
     }
-    Shoelist.findById(req.params.instrumentid)
+    Shoelist.findById(req.params.shoeid)
         .exec((err, shoedata) => {
             if (!shoedata) {
                 res

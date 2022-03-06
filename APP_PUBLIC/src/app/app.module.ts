@@ -12,6 +12,7 @@ import { CreateinstrumentComponent } from './createinstrument/createinstrument.c
 import { HomeListComponent } from './home-list/home-list.component';
 import { FormsModule } from '@angular/forms';
 import { UpdatealbumComponent } from './updatealbum/updatealbum.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UpdatealbumComponent } from './updatealbum/updatealbum.component';
     DetailsofinstrumentComponent,
     CreateinstrumentComponent,
     HomeListComponent,
-    UpdatealbumComponent
+    UpdatealbumComponent,
+    CartComponent
     
   ],
   imports: [
@@ -33,10 +35,11 @@ import { UpdatealbumComponent } from './updatealbum/updatealbum.component';
       [  
       { path: '', component: HomepageComponent   },   
       { path: 'shoes', component: HomeListComponent   },
-    { path: 'about', component: AboutComponent   },
-    { path: 'Details/:instrumentid', component: DetailsofinstrumentComponent   },
-    { path: 'create', component: CreateinstrumentComponent},
-    { path: 'Update/:instrumentid', component: UpdatealbumComponent}
+      { path: 'about', component: AboutComponent   },
+      { path: 'Details/:instrumentid', component: DetailsofinstrumentComponent   },
+      { path: 'create', component: CreateinstrumentComponent},
+      { path: 'Update/:instrumentid', component: UpdatealbumComponent},
+      { path: 'cart', component: CartComponent}
   ])
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}],

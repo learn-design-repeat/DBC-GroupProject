@@ -7,7 +7,11 @@ const ctrlShoes=require('../controllers/Shoe');
 router.get('/Shoe', ctrlShoes.getshoe);
 router.post('/Shoe', ctrlShoes.createshoe);
 
-router.get('/Shoe/:instrumentid', ctrlShoes.getsingleshoeOrder);
-router.put('/Shoe/:instrumentid', ctrlShoes.updateshoeorder);
-router.delete('/Shoe/:instrumentid', ctrlShoes.deleteshoeorder);
+router.get('/Shoe/:shoeid', ctrlShoes.getsingleshoeOrder);
+router.put('/Shoe/:shoeid', ctrlShoes.updateshoeorder);
+router.delete('/Shoe/:shoeid', ctrlShoes.deleteshoeorder);
+
+router.get('/cart', ctrlShoes.getshoe);
+router.post('/cart', ctrlShoes.createshoe)
+router.delete('/cart/:shoeid', ctrlShoes.deleteshoeorder);
 module.exports = router;
