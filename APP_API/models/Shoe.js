@@ -13,3 +13,4 @@ const ShoesSchema = new mongoose.Schema({
     Size: String
 });
 mongoose.model('Shoe', ShoesSchema, 'Shoes');
+mongoose.model('Cart', ShoesSchema, 'Cart');

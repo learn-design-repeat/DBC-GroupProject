@@ -28,15 +28,15 @@ export class ShoeServiceService {
     .catch(this.handleError); 
   }  
   
-  createshoe(newshoe: Shoe): Promise<void | Shoe> {     
+   createshoe(newshoe: Shoe): Promise<void | Shoe> {     
     return this.http.post(this.shoeUrl, newshoe) 
     .toPromise() 
     .then(response => response as Shoe) 
     .catch(this.handleError);   
-  }
+   }
 
 
-  deletealbum(shoeId: string): Promise<void | Shoe>
+   deletealbum(shoeId: string): Promise<void | Shoe>
     {
       return this.http.request('DELETE',this.shoeUrl + '/' + shoeId) 
       .toPromise() 

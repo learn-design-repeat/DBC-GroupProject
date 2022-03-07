@@ -1,9 +1,9 @@
 
 const mongoose = require("mongoose");
-const Musicinstruments = mongoose.model('Instrument');
-const getInstrument=function(req,res)
+const CartList = mongoose.model('Cart');
+const getshoe=function(req,res)
 {
-    Musicinstruments.find().exec(function (err, musicdata) {
+    CartList.find().exec(function (err, shoedata) {
         if (err) {
             res
                 .status(404)
@@ -12,13 +12,13 @@ const getInstrument=function(req,res)
         }
         res
             .status(200)
-            .json(musicdata);
+            .json(shoedata);
     })
 
 };
-const createInstrumentOrder=function(req,res)
+const createshoe=function(req,res)
 {
-    Musicinstruments.create(req.body, (err, musicdata) => {
+    CartList.create(req.body, (err, shoedata) => {
         if (err) {
             res
                 .status(404)
@@ -27,54 +27,54 @@ const createInstrumentOrder=function(req,res)
         }
         res
             .status(201)
-            .json(musicdata);
+            .json(shoedata);
     })
 
 };
-const getsingleInstrumentOrder=function(req,res)
+const getsingleshoeOrder=function(req,res)
 {
-    Musicinstruments
-        .findById(req.params.instrumentid)
-        .exec((err, musicdata) => {
-            if (!musicdata) {
+    CartList
+        .findById(req.params.shoeid)
+        .exec((err, shoedata) => {
+            if (!shoedata) {
                 return res
                     .status(404)
                     .json({
-                        "message": "Musicinstruments data not found"
+                        "message": "Shoes data not found"
                     });
             } else {
                 res
                 .status(200)
-                .json(musicdata);
+                .json(shoedata);
             }
 
         });
 
 };
-const updateInstrumentorder=function(req,res)
+const updateshoeorder=function(req,res)
 {
-    if (!req.params.instrumentid) {
+    if (!req.params.shoeid) {
         res
             .status(404)
             .json({
-                "message": "Not found, Musicinstrumentsid is required"
+                "message": "Not found, Shoes is required"
             });
         return;
     }
-    Musicinstruments.findById(req.params.instrumentid)
-        .exec((err, musicdata) => {
-            if (!musicdata) {
+    CartList.findById(req.params.shoeid)
+        .exec((err, shoedata) => {
+            if (!shoedata) {
                 res
                     .stats(404)
                     .json({
-                        "message": "Musicinstrumentsid not found"
+                        "message": "Shoes not found"
                     });
                 return;
             }
             musicdata.name = req.body.name;
             musicdata.Quantity = req.body.Quantity;
             musicdata.Color = req.body.Color;
-            musicdata.save((err, musicdata) => {
+            musicdata.save((err, shoedata) => {
                 if (err) {
                     res
                         .status(404)
@@ -82,19 +82,19 @@ const updateInstrumentorder=function(req,res)
                 } else {
                     res
                         .status(200)
-                        .json(musicdata);
+                        .json(shoedata);
                 }
             });
         });
 };
 
-const deleteInstrumentorder=function(req,res)
+const deleteshoeorder=function(req,res)
 {
-    const Instrumentid = req.params.instrumentid;
-    if (Instrumentid) {
-        Musicinstruments
-            .findByIdAndRemove(Instrumentid)
-            .exec((err, musicdata) => {
+    const shoeid = req.params.shoeid;
+    if (shoeid) {
+        CartList
+            .findByIdAndRemove(shoeid)
+            .exec((err, shoedata) => {
                 if (err) {
                     res
                         .status(404)
@@ -108,15 +108,14 @@ const deleteInstrumentorder=function(req,res)
     } else {
         res
             .status(404)
-            .json({ "message": "No Musicinstrumentsid" });
+            .json({ "message": "No Shoesid" });
     }
 
 };
 module.exports= {
-    getInstrument,
-    createInstrumentOrder,
-    getsingleInstrumentOrder,
-    updateInstrumentorder,
-    deleteInstrumentorder
+    getshoe,
+    createshoe,
+    getsingleshoeOrder,
+    deleteshoeorder
 
    };

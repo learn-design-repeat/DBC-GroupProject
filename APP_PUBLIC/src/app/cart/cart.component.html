@@ -1,1 +1,120 @@
-<p>cart works!</p>
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="bread"><span><a href="index.html">Home</a></span> / <span>Checkout</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="colorlib-product">
+    <div class="container">
+        <div class="row row-pb-lg">
+            <div class="col-sm-10 offset-md-1">
+                <div class="process-wrap">
+                    <div class="process text-center active">
+                        <p><span>01</span></p>
+                        <h3>Shopping Cart</h3>
+                    </div>
+                    <div class="process text-center">
+                        <p><span>02</span></p>
+                        <h3>Checkout</h3>
+                    </div>
+                    <div class="process text-center">
+                        <p><span>03</span></p>
+                        <h3>Order Complete</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <h2>Billing Details</h2>
+
+                <div class="row" *ngFor="let shoe of shoes">
+                    <div class="col-md-12">
+                        <div class="border text-center d-flex justify-content-between product-entry">
+                            <a href="#" class="prod-img">
+                                <img src="../../assets/images/item-10.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
+                            </a>
+                            <div class="desc col-lg-8">
+                                <h2><a href="#">{{shoe.Name}}</a></h2>
+                                <h5>{{ shoe.Brand }} <h6><i>{{ shoe.modelNumber }}</i></h6> </h5>
+                                <h5>{{ shoe.Size }}</h5>
+                                <h5>{{ shoe.Color }}</h5>
+                                <span class="price">{{ shoe.Price }}</span>
+                                <h6>
+                                    <a class="icon-trash" (click)="deleteShoeCart(shoe)"> Remove from Cart</a>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+                
+            </div>
+<!-- Start of the card total -->
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="cart-detail">
+                            <h2>Cart Total</h2>
+                            <ul>
+                                <li><span>Subtotal</span> <span>{{ subTotal }}</span></li>
+                                <li><span>Tax 13%</span> <span>{{ tax }}</span></li>
+                                <li><span>Shipping Cost</span> <span>{{ shipping }}</span></li>
+                                <li><span>Order Total</span> <span>{{ orderTotal }}</span></li>
+                            </ul>
+                        </div>
+                   </div>
+
+                   <div class="w-100"></div>
+
+                   <div class="col-md-12">
+                        <div class="cart-detail">
+                            <h2>Payment Method</h2>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="radio">
+                                       <label><input type="radio" name="optradio"> Direct Bank Tranfer</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="radio">
+                                       <label><input type="radio" name="optradio"> Check Payment</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="radio">
+                                       <label><input type="radio" name="optradio"> Paypal</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="checkbox">
+                                       <label><input type="checkbox" value=""> I have read and accept the terms and conditions</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p><a href="#" class="btn btn-primary">Place an order</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End of the payment card -->
