@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Instrument} from '../instrument'; 
-import { InstrumentServiceService} from "../instrument-service.service";
+import { Shoe } from '../shoe';
+import { ShoeServiceService } from '../shoe.service';
 
 @Component({
   selector: 'app-home-list',
   templateUrl: './home-list.component.html',
   styleUrls: ['./home-list.component.css'],
-  providers: [InstrumentServiceService]
+  providers: [ShoeServiceService]
 })
 export class HomeListComponent implements OnInit {
 
-  instruments: Instrument[]   
-  constructor( private instrumentService: InstrumentServiceService) {  }   
-  ngOnInit(): void 
-  { this.instrumentService 
-    .getInstrument() 
-    .then((instrument) => {
-       this.instruments = instrument as Instrument[]
-    });  
+  newshoe: Shoe[];
+  constructor(private shoeService: ShoeServiceService) { }
+  ngOnInit(): void {
+    this.shoeService
+      .getShoe()
+      .then((response) => {
+        this.newshoe = response as Shoe[]
+      });
 
   }
-
 }
