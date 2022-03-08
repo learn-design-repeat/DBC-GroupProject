@@ -33,7 +33,7 @@ export class DetailsComponent implements OnInit {
   }
 
   get shoeImage() {
-    const url = this.shoe.color[this.selectedColor].imageColor
+    const url = `../../assets/images/` + this.shoe.color[this.selectedColor].imageColor + `.jpg`
     return url
   }
 

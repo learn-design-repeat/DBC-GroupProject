@@ -21,20 +21,21 @@
     </div>
 </div>
 
-
-<div class="container">
-    <div class="row row-cols-3">
-        <div class="col" *ngFor="let newshoe of newshoe">
-            <a routerLink="{{'/details/' + newshoe._id}}">
-                <div>
-                    <img src="{{'../../assets/img/bg-img/' + newshoe.color[0].imageColor}}" alt="">
-                    <div>{{newshoe.Name}}</div>
-                    <div>{{newshoe.Price}}</div>
+    <div class="col-lg-9 col-xl-9">
+        <div class="row row-pb-md">
+            <div class="col" *ngFor="let newshoe of newshoe">
+                <div class="col-lg-4 mb-4 text-center">
+                    <div class="product-entry border">
+                        <a routerLink="{{'/details/' + newshoe._id}}" class="prod-img">
+                            <img src="{{'../../assets/images/' + newshoe.color[0].imageColor + '.jpg'}}" class="img-fluid" alt="Free html5 bootstrap 4 template">
+                        </a>
+                    <div class="desc">
+                    <h2><a href="#">{{newshoe.Name}}</a></h2>
+                    <span class="price">CAD {{newshoe.Price}}</span>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
-
 
     <!-- <div class="row">
         <div class="col-md-12 text-center">
