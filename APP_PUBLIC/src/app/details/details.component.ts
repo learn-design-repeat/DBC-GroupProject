@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Shoe } from '../shoe';
 import { ShoeServiceService } from '../shoe.service';
 import { switchMap } from 'rxjs';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -16,7 +16,8 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private shoeService: ShoeServiceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -34,6 +35,12 @@ export class DetailsComponent implements OnInit {
   get shoeImage() {
     const url = this.shoe.color[this.selectedColor].imageColor
     return url
+  }
+
+  public addShoeToCart(shoe: Shoe) {
+    console.log("add shoe", shoe)
+    this.shoeService.addShoeCart(shoe);
+    this.router.navigateByUrl('/cart');
   }
 
 }

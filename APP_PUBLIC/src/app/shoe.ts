@@ -3,7 +3,7 @@ export class Shoe {
     Name: String;
     Brand: String;
     modelNumber: String;
-    Price: String;
+    Price: Number;
     color: [colorschema];
     Size: String;
 }

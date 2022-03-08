@@ -12,6 +12,13 @@ const usersRouter = require('./app_server/routes/users');
 const apiRouter= require('./APP_API/routes/index');
 var app = express();
 
+app.use('/api', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,PUT');
+  next();
+ });
+
 // view engine setup
 app.set('views', path.join(__dirname,'app_server', 'views'));
 app.set('view engine', 'pug');
@@ -25,17 +32,13 @@ app.use(express.static(path.join(__dirname, 'APP_PUBLIC', 'build')));
 
 //app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api', (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,PUT');
-  next();
- });
+
 app.use('/api', apiRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

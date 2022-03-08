@@ -19,6 +19,7 @@ const getshoe=function(req,res)
 const createshoe=function(req,res)
 {
     CartList.create(req.body, (err, shoedata) => {
+        console.log("Create shoe entry in the cart", shoedata);
         if (err) {
             res
                 .status(404)

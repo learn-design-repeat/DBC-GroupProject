@@ -60,7 +60,8 @@ export class ShoeServiceService {
       .catch(this.handleError);  
      }  
     
-    addShoeCart(newshoe: Shoe): Promise<void | Shoe> {     
+    addShoeCart(newshoe: Shoe): Promise<void | Shoe> { 
+      console.log("within addShoe", newshoe)    
       return this.http.post(this.cartURL, newshoe) 
       .toPromise() 
       .then(response => response as Shoe) 
@@ -78,6 +79,7 @@ export class ShoeServiceService {
     /* Cart - APIS End> */
   
     private handleError(error: any){ 
-    console.log("error");   } 
+    console.log("error");   
+    } 
   
 }

@@ -35,7 +35,7 @@ export class CartComponent implements OnInit {
     this.subTotal = 0;
     if(this.shoes) {
       this.shoes.forEach(element => {
-      this.subTotal = this.subTotal + (element.Price as unknown as number);
+      this.subTotal = this.subTotal + (element.Price as number);
       console.log(this.subTotal);
     });
     console.log(this.subTotal);
@@ -44,10 +44,7 @@ export class CartComponent implements OnInit {
     this.orderTotal = this.subTotal + this.tax + this.shipping;
   }}
 
-  public addShoeToCart(shoe: Shoe) {
-    this.shoeService.createshoe(shoe);
-    this.router.navigateByUrl('/cart');
-  }
+ 
 
   public deleteShoeCart(shoe: Shoe) {
     this.shoeService.deleteCartShoe(shoe._id);
