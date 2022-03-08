@@ -1,4 +1,5 @@
 <span class="input-group-btn" *ngFor="let color of colorArray; let i = index">
-    <button (mouseover)="changeSelectedColor(i)" type="button" class="btn" [style.backgroundColor]="color.Colour"
-        [style.color]="buttonTextColor(color.Colour)">{{color.Colour}}</button>
+    <button (click)="changeSelectedColor(i)" type="button" class="btn btn-dark rounded-circle"
+        [style.backgroundColor]="color.Colour" [style]="buttonStyle"
+        [style.color]="buttonTextColor(color.Colour)"></button>
 </span>
