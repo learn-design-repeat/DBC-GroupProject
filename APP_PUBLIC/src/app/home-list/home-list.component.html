@@ -43,31 +43,31 @@
                             <h3>Size/Width</h3>
                             <div class="block-26 mb-2">
                                 <h4>Size</h4>
-                           <ul>
-                              <li><a href="#">7</a></li>
-                              <li><a href="#">7.5</a></li>
-                              <li><a href="#">8</a></li>
-                              <li><a href="#">8.5</a></li>
-                              <li><a href="#">9</a></li>
-                              <li><a href="#">9.5</a></li>
-                              <li><a href="#">10</a></li>
-                              <li><a href="#">10.5</a></li>
-                              <li><a href="#">11</a></li>
-                              <li><a href="#">11.5</a></li>
-                              <li><a href="#">12</a></li>
-                              <li><a href="#">12.5</a></li>
-                              <li><a href="#">13</a></li>
-                              <li><a href="#">13.5</a></li>
-                              <li><a href="#">14</a></li>
-                           </ul>
-                        </div>
-                        <div class="block-26">
+                                <ul>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">7.5</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">8.5</a></li>
+                                    <li><a href="#">9</a></li>
+                                    <li><a href="#">9.5</a></li>
+                                    <li><a href="#">10</a></li>
+                                    <li><a href="#">10.5</a></li>
+                                    <li><a href="#">11</a></li>
+                                    <li><a href="#">11.5</a></li>
+                                    <li><a href="#">12</a></li>
+                                    <li><a href="#">12.5</a></li>
+                                    <li><a href="#">13</a></li>
+                                    <li><a href="#">13.5</a></li>
+                                    <li><a href="#">14</a></li>
+                                </ul>
+                            </div>
+                            <div class="block-26">
                                 <h4>Width</h4>
-                           <ul>
-                              <li><a href="#">M</a></li>
-                              <li><a href="#">W</a></li>
-                           </ul>
-                        </div>
+                                <ul>
+                                    <li><a href="#">M</a></li>
+                                    <li><a href="#">W</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-12">
@@ -126,12 +126,15 @@
                             <div class="product-entry border">
                                 <a routerLink="{{'/details/' + newshoe._id}}" class="prod-img">
                                     <div class="card" style="width: 13rem;">
-                                        <img class="card-img-top" src="{{'../../assets/images/' + newshoe.color[0].imageColor + '.jpg'}}" alt="Card image cap" width="200px" height="200px">
+                                        <img class="card-img-top"
+                                            src="{{'../../assets/images/' + newshoe.color[0].imageColor + '.jpg'}}"
+                                            alt="Card image cap" width="200px" height="200px">
                                         <div class="card-body">
-                                          <h5 class="card-title" >{{newshoe.Name}}</h5>
-                                          <p class="card-text" >CAD {{newshoe.Price}}</p>
+                                            <h5 class="card-title">{{newshoe.Name}}</h5>
+                                            <p class="card-text">{{newshoe.Price.valueOf() | currency:'CAD':'symbol'}}
+                                            </p>
                                         </div>
-                                    </div>        
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -140,37 +143,37 @@
             </div>
         </div>
     </div>
-    </div>
-    
-
-
-    
+</div>
 
 
 
-    <div class="colorlib-partner">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
-                    <h2>Trusted Partners</h2>
-                </div>
+
+
+
+
+<div class="colorlib-partner">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
+                <h2>Trusted Partners</h2>
             </div>
-            <div class="row">
-                <div class="col partner-col text-center">
-                    <img src="../../assets/images/brand-1.jpg" class="img-fluid" alt="ProductBrands">
-                </div>
-                <div class="col partner-col text-center">
-                    <img src="../../assets/images/brand-2.jpg" class="img-fluid" alt="ProductBrands">
-                </div>
-                <div class="col partner-col text-center">
-                    <img src="../../assets/images/brand-3.jpg" class="img-fluid" alt="ProductBrands">
-                </div>
-                <div class="col partner-col text-center">
-                    <img src="../../assets/images/brand-4.jpg" class="img-fluid" alt="ProductBrands">
-                </div>
-                <div class="col partner-col text-center">
-                    <img src="../../assets/images/brand-5.jpg" class="img-fluid" alt="ProductBrands">
-                </div>
+        </div>
+        <div class="row">
+            <div class="col partner-col text-center">
+                <img src="../../assets/images/brand-1.jpg" class="img-fluid" alt="ProductBrands">
+            </div>
+            <div class="col partner-col text-center">
+                <img src="../../assets/images/brand-2.jpg" class="img-fluid" alt="ProductBrands">
+            </div>
+            <div class="col partner-col text-center">
+                <img src="../../assets/images/brand-3.jpg" class="img-fluid" alt="ProductBrands">
+            </div>
+            <div class="col partner-col text-center">
+                <img src="../../assets/images/brand-4.jpg" class="img-fluid" alt="ProductBrands">
+            </div>
+            <div class="col partner-col text-center">
+                <img src="../../assets/images/brand-5.jpg" class="img-fluid" alt="ProductBrands">
             </div>
         </div>
     </div>
+</div>
