@@ -13,10 +13,11 @@ import { Decimal128 } from 'mongoose';
 export class CartComponent implements OnInit {
 
   shoes: Shoe[]
+  selectedShoe;
   subTotal: number;
-  tax;
-  shipping;
-  orderTotal;
+  tax: any;
+  shipping = 0;
+  orderTotal = 0;
 
   constructor(private shoeService: ShoeServiceService, private router: Router ) { }
 
@@ -24,7 +25,7 @@ export class CartComponent implements OnInit {
     this.shoeService 
         .getCartShoes() 
         .then((shoe) => {
-            this.shoes = shoe as Shoe[];      
+            this.shoes = shoe as Shoe[];  
             this.updateCartTotal(); 
         });
      
@@ -39,9 +40,12 @@ export class CartComponent implements OnInit {
       console.log(this.subTotal);
     });
     console.log(this.subTotal);
-    this.tax = (this.subTotal * (13/100)) + this.subTotal;
-    this.shipping = 8;
-    this.orderTotal = this.subTotal + this.tax + this.shipping;
+    this.tax = ((this.subTotal * (.13)) + this.subTotal);
+    if (this.subTotal != 0) {
+      this.shipping = 8;
+    }
+    this.orderTotal = (this.subTotal + this.tax + this.shipping).toFixed(2) ;
+    this.tax = this.tax.toFixed(2);
   }}
 
  

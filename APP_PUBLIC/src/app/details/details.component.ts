@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Shoe } from '../shoe';
+import { Shoe, colorschema } from '../shoe';
 import { ShoeServiceService } from '../shoe.service';
 import { switchMap } from 'rxjs';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -11,8 +11,17 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   providers: [ShoeServiceService]
 })
 export class DetailsComponent implements OnInit {
-  public shoe: Shoe
+  public shoe: Shoe;
+  public cartshoe: Shoe = {
+    Name: '',
+    Brand: '',
+    modelNumber: '',
+    Price: 0,
+    Size: '',
+    color: [{Colour:'' , imageColor:''}]
+  }
   public selectedColor: number = 0
+  public color : colorschema;
 
   constructor(
     private shoeService: ShoeServiceService,
@@ -38,8 +47,18 @@ export class DetailsComponent implements OnInit {
   }
 
   public addShoeToCart(shoe: Shoe) {
-    console.log("add shoe", shoe)
-    this.shoeService.addShoeCart(shoe);
+    
+    // this.color.Colour = this.shoe.color[this.selectedColor].Colour;
+    // this.color.imageColor = this.shoeImage;
+    // shoe.color[0] = this.color;
+    this.cartshoe.Brand = shoe.Brand;
+    this.cartshoe.Name = shoe.Name;
+    this.cartshoe.Price = shoe.Price;
+    this.cartshoe.modelNumber = shoe.modelNumber
+    this.cartshoe.color[0].Colour = this.shoe.color[this.selectedColor].Colour;
+    this.cartshoe.color[0].imageColor = this.shoeImage;
+    this.shoeService.addShoeCart(this.cartshoe);
+    console.log("add shoe", this.cartshoe)
     this.router.navigateByUrl('/cart');
   }
 

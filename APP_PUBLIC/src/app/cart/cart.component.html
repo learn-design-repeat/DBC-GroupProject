@@ -37,7 +37,7 @@
                     <div class="col-md-12">
                         <div class="border text-center d-flex justify-content-between product-entry">
                             <a href="#" class="prod-img">
-                                <img src="../../assets/images/item-10.jpg" class="img-fluid"
+                                <img [src]=shoe.color[0].imageColor class="img-fluid"
                                     alt="Free html5 bootstrap 4 template">
                             </a>
                             <div class="desc col-lg-8">
@@ -45,7 +45,7 @@
                                 <h5>{{ shoe.Brand }} <h6><i>{{ shoe.modelNumber }}</i></h6>
                                 </h5>
                                 <h5>{{ shoe.Size }}</h5>
-                                <!-- <h5>{{ shoe.color }}</h5> -->
+                                <h5>{{ shoe.color[0].Colour}}</h5>
                                 <span class="price">{{ shoe.Price }}</span>
                                 <h6>
                                     <a class="icon-trash" (click)="deleteShoeCart(shoe)"> Remove from Cart</a>
@@ -68,7 +68,7 @@
                                 <li><span>Subtotal</span> <span>{{ subTotal }}</span></li>
                                 <li><span>Tax 13%</span> <span>{{ tax }}</span></li>
                                 <li><span>Shipping Cost</span> <span>{{ shipping }}</span></li>
-                                <li><span>Order Total</span> <span>{{ orderTotal }}</span></li>
+                                <li><span>Order Total(CAD)</span> <span>{{ orderTotal }}</span></li>
                             </ul>
                         </div>
                     </div>

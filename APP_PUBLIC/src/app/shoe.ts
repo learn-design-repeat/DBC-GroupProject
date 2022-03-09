@@ -7,7 +7,7 @@ export class Shoe {
     color: [colorschema];
     Size: String;
 }
-interface colorschema {
+export interface colorschema {
     Colour: String;
     imageColor: String;
 }
