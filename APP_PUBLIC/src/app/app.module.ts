@@ -14,6 +14,7 @@ import { UpdatealbumComponent } from './updatealbum/updatealbum.component';
 import { CartComponent } from './cart/cart.component';
 import { DetailsComponent } from './details/details.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
     UpdatealbumComponent,
     CartComponent,
     DetailsComponent,
-    ColorPickerComponent
+    ColorPickerComponent,
+    AboutpageComponent
 
   ],
   imports: [
@@ -41,7 +43,8 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
         { path: 'details/:id', component: DetailsComponent },
         { path: 'create', component: CreateinstrumentComponent },
         { path: 'Update/:instrumentid', component: UpdatealbumComponent },
-        { path: 'cart', component: CartComponent }
+        { path: 'cart', component: CartComponent },
+        { path: 'About', component: AboutpageComponent }
       ])
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
