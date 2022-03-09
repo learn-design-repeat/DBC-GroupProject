@@ -1,0 +1,65 @@
+
+<div class="colorlib-product">
+    <div class="container">
+        <div class="row">
+    <div class="col-lg-12">
+        <form ngNativeValidate (ngSubmit)="createNewshoe(newshoe)">
+            <h2>Create a new Shoe</h2>
+          <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input [ngModelOptions]="{standalone: true}" type="text" id="name" [(ngModel)]="newshoe.Name" class="form-control" placeholder="Name">
+                </div>
+            </div>
+
+           <div class="col-md-12">
+              <div class="form-group">
+                  <label for="Color">Color</label><i class="icon icon-arrow-down3"></i>
+                 <div class="form-field">
+                    <select name="people" id="people" [(ngModel)]="newshoe.color[0].Colour" class="form-control">
+                          <option value="Black">Black</option>
+                        <option value="Black">Black</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Red">Red</option>
+                        <option value="Grey">Grey</option>
+                    </select>
+                 </div>
+              </div>
+           </div>
+           <div class="col-md-12">
+            <div class="form-group">
+                <label for="shoeImg">Shoe Image</label>
+                <input [ngModelOptions]="{standalone: true}" type="text" id="address" class="form-control" [(ngModel)]="newshoe.color[0].imageColor" placeholder="Enter Your Address">
+            </div>
+        </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="modelNumber">Model Number</label>
+                        <input [ngModelOptions]="{standalone: true}" type="text" id="modelNumber" class="form-control" [(ngModel)]="newshoe.modelNumber" placeholder="Model Number">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Brand">Brand</label>
+                        <input [ngModelOptions]="{standalone: true}" type="text" id="Brand" class="form-control" [(ngModel)]="newshoe.Brand" placeholder="Model Number">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Price">Price</label>
+                        <input [ngModelOptions]="{standalone: true}" type="text" id="Price" class="form-control" [(ngModel)]="newshoe.Price" placeholder="Price">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="size">Size</label>
+                    <input [ngModelOptions]="{standalone: true}" type="text" id="size" class="form-control" [(ngModel)]="newshoe.Size" placeholder="Size">
+              </div>
+           </div>
+       </div>
+       <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    </div></div></div>

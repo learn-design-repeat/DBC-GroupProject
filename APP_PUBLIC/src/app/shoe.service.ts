@@ -29,6 +29,7 @@ export class ShoeServiceService {
   }  
   
    createshoe(newshoe: Shoe): Promise<void | Shoe> {     
+    console.log("createeeeee", newshoe)
     return this.http.post(this.shoeUrl, newshoe) 
     .toPromise() 
     .then(response => response as Shoe) 
