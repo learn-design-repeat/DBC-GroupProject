@@ -27,7 +27,7 @@
                 <div class="product-desc">
                     <h3>{{shoe.Name}}</h3>
                     <p class="price">
-                        <span>CAD {{shoe.Price}}</span>
+                        <span>{{shoe.Price.valueOf() | currency: 'CAD' : 'symbol'}}</span>
                         <span class="rate">
                             <i class="icon-star-full"></i>
                             <i class="icon-star-full"></i>
@@ -53,8 +53,9 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 text-center">
-                            <p class="addtocart"><button (click)="addShoeToCart(shoe)" class="btn btn-primary btn-addtocart"><i
-                                        class="icon-shopping-cart"></i> Add to Cart</button>></p>
+                            <p class="addtocart"><button (click)="addShoeToCart(shoe)"
+                                    class="btn btn-primary btn-addtocart"><i class="icon-shopping-cart"></i> Add to
+                                    Cart</button>></p>
                         </div>
                     </div>
                 </div>
